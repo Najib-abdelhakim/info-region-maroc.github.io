@@ -1,3 +1,141 @@
+// DONNÉES SOCIOLOGIQUES INTÉGRÉES DIRECTEMENT
+const SOCIOLOGIQUE_DATA = {
+  "2025": {
+    "Tanger-Tétouan-Al Hoceïma": {
+      "population": 3970000,
+      "densite": 230.0,
+      "superficie": 17262,
+      "superficie_pourcentage": 2.43,
+      "population_pourcentage": 10.38,
+      "subdivisions": 149,
+      "provinces": 8,
+      "densite_par_province": 28.75,
+      "taille_moyenne_communes": 26644
+    },
+    "L'Oriental": {
+      "population": 2570000,
+      "densite": 28.51,
+      "superficie": 90127,
+      "superficie_pourcentage": 12.6,
+      "population_pourcentage": 6.71,
+      "subdivisions": 147,
+      "provinces": 8,
+      "densite_par_province": 3.56,
+      "taille_moyenne_communes": 17483
+    },
+    "Fès-Meknès": {
+      "population": 4680000,
+      "densite": 116.78,
+      "superficie": 40075,
+      "superficie_pourcentage": 5.64,
+      "population_pourcentage": 12.29,
+      "subdivisions": 194,
+      "provinces": 9,
+      "densite_par_province": 12.98,
+      "taille_moyenne_communes": 24124
+    },
+    "Rabat-Salé-Kénitra": {
+      "population": 5080000,
+      "densite": 279.18,
+      "superficie": 18194,
+      "superficie_pourcentage": 2.56,
+      "population_pourcentage": 13.29,
+      "subdivisions": 114,
+      "provinces": 7,
+      "densite_par_province": 39.88,
+      "taille_moyenne_communes": 44561
+    },
+    "Béni Mellal-Khénifra": {
+      "population": 2790000,
+      "densite": 68.0,
+      "superficie": 41033,
+      "superficie_pourcentage": 5.77,
+      "population_pourcentage": 7.3,
+      "subdivisions": 164,
+      "provinces": 5,
+      "densite_par_province": 13.6,
+      "taille_moyenne_communes": 17012
+    },
+    "Casablanca-Settat": {
+      "population": 7570000,
+      "densite": 389.21,
+      "superficie": 19448,
+      "superficie_pourcentage": 2.74,
+      "population_pourcentage": 19.84,
+      "subdivisions": 153,
+      "provinces": 9,
+      "densite_par_province": 43.25,
+      "taille_moyenne_communes": 49477
+    },
+    "Marrakech-Safi": {
+      "population": 4980000,
+      "densite": 127.14,
+      "superficie": 39167,
+      "superficie_pourcentage": 5.51,
+      "population_pourcentage": 13.04,
+      "subdivisions": 251,
+      "provinces": 8,
+      "densite_par_province": 15.89,
+      "taille_moyenne_communes": 19841
+    },
+    "Drâa-Tafilalet": {
+      "population": 1810000,
+      "densite": 15.65,
+      "superficie": 115592,
+      "superficie_pourcentage": 16.25,
+      "population_pourcentage": 4.74,
+      "subdivisions": 109,
+      "provinces": 5,
+      "densite_par_province": 3.13,
+      "taille_moyenne_communes": 16606
+    },
+    "Souss-Massa": {
+      "population": 2940000,
+      "densite": 54.66,
+      "superficie": 53789,
+      "superficie_pourcentage": 7.57,
+      "population_pourcentage": 7.7,
+      "subdivisions": 175,
+      "provinces": 6,
+      "densite_par_province": 9.11,
+      "taille_moyenne_communes": 16800
+    },
+    "Guelmim-Oued Noun": {
+      "population": 460000,
+      "densite": 9.98,
+      "superficie": 46108,
+      "superficie_pourcentage": 6.49,
+      "population_pourcentage": 1.2,
+      "subdivisions": 53,
+      "provinces": 4,
+      "densite_par_province": 2.5,
+      "taille_moyenne_communes": 8679
+    },
+    "Laâyoune-Sakia El Hamra": {
+      "population": 378000,
+      "densite": 2.7,
+      "superficie": 140018,
+      "superficie_pourcentage": 19.7,
+      "population_pourcentage": 0.99,
+      "subdivisions": 20,
+      "provinces": 4,
+      "densite_par_province": 0.68,
+      "taille_moyenne_communes": 18900
+    },
+    "Dakhla-Oued Ed-Dahab": {
+      "population": 130000,
+      "densite": 0.99,
+      "superficie": 130898,
+      "superficie_pourcentage": 18.41,
+      "population_pourcentage": 0.34,
+      "subdivisions": 13,
+      "provinces": 2,
+      "densite_par_province": 0.5,
+      "taille_moyenne_communes": 10000
+    }
+  }
+};
+
 class MoroccoDataVisualization {
     constructor() {
         this.config = {
@@ -11,7 +149,8 @@ class MoroccoDataVisualization {
             }
         };
 
-        this.currentData = {};
+        // CHARGEMENT DIRECT DES DONNÉES
+        this.currentData = SOCIOLOGIQUE_DATA["2025"];
         this.currentIndicator = "population";
         this.selectedRegion = null;
         this.regionsTopology = null;
@@ -63,58 +202,27 @@ class MoroccoDataVisualization {
     }
 
     async loadData() {
-    try {
-        console.log("Chargement des données...");
-        
-        const [topology, sociologiqueData] = await Promise.all([
-            d3.json('https://cdn.jsdelivr.net/npm/morocco-map/data/regions.json'),
-            d3.json('donnees-sociologiques.json')
-        ]);
+        try {
+            console.log("Chargement des données...");
+            
+            // CHARGER SEULEMENT LA TOPOLOGIE DEPUIS LE CDN
+            const topology = await d3.json('https://cdn.jsdelivr.net/npm/morocco-map/data/regions.json');
+            
+            console.log("Topologie chargée:", topology);
+            console.log("Données sociologiques intégrées:", this.currentData);
 
-        console.log("Topologie chargée:", topology);
-        console.log("Données sociologiques chargées:", sociologiqueData);
-
-        this.regionsTopology = topology;
-        
-        // Vérifier la structure des données
-        if (sociologiqueData && sociologiqueData["2025"]) {
-            this.currentData = sociologiqueData["2025"];
-            console.log("Données 2025 chargées:", this.currentData);
-        } else {
-            console.error("Structure de données incorrecte. Attendu: { '2025': { ... } }");
-            console.error("Reçu:", sociologiqueData);
-            throw new Error("Structure de données incorrecte");
+            this.regionsTopology = topology;
+            
+        } catch (error) {
+            console.error('Erreur de chargement:', error);
+            this.showError("Impossible de charger la carte. Vérifiez votre connexion internet.");
+            await this.loadFallbackData();
         }
-        
-    } catch (error) {
-        console.error('Erreur de chargement:', error);
-        this.showError("Impossible de charger les données. Vérifiez la console pour plus de détails.");
-        await this.loadFallbackData();
-    }
-    }
-
-    async loadJSONWithTimeout(url, timeout) {
-        return new Promise((resolve, reject) => {
-            const timer = setTimeout(() => {
-                reject(new Error(`Timeout loading ${url}`));
-            }, timeout);
-
-            d3.json(url)
-                .then(data => {
-                    clearTimeout(timer);
-                    resolve(data);
-                })
-                .catch(error => {
-                    clearTimeout(timer);
-                    reject(error);
-                });
-        });
     }
 
     async loadFallbackData() {
-        // Données de démonstration minimales
+        // Données de démonstration minimales pour la topologie
         this.regionsTopology = await this.createMinimalTopology();
-        this.currentData = this.getSampleData();
     }
 
     getSampleData() {
@@ -128,12 +236,15 @@ class MoroccoDataVisualization {
     calculateAdditionalMetrics() {
         Object.keys(this.currentData).forEach(region => {
             const data = this.currentData[region];
-            // Densité par province
-            data.densite_par_province = data.provinces > 0 ? 
-                (data.population / data.provinces) / (data.superficie / data.provinces) : 0;
-            // Taille moyenne des communes
-            data.taille_moyenne_communes = data.subdivisions > 0 ? 
-                data.population / data.subdivisions : 0;
+            // Ces calculs sont déjà dans les données, mais on les garde au cas où
+            if (!data.densite_par_province) {
+                data.densite_par_province = data.provinces > 0 ? 
+                    (data.population / data.provinces) / (data.superficie / data.provinces) : 0;
+            }
+            if (!data.taille_moyenne_communes) {
+                data.taille_moyenne_communes = data.subdivisions > 0 ? 
+                    data.population / data.subdivisions : 0;
+            }
         });
     }
 
