@@ -2,136 +2,136 @@
 const SOCIOLOGIQUE_DATA = {
   "2025": {
     "Tanger-Tétouan-Al Hoceïma": {
-      "population": 3970000,
-      "densite": 230.0,
+      "population": 3986991,
+      "densite": 230.89,
       "superficie": 17262,
       "superficie_pourcentage": 2.43,
-      "population_pourcentage": 10.38,
+      "population_pourcentage": 10.60,
       "subdivisions": 149,
       "provinces": 8,
-      "densite_par_province": 28.75,
-      "taille_moyenne_communes": 26644
+      "densite_par_province": 28.86,
+      "taille_moyenne_communes": 26758
     },
     "L'Oriental": {
-      "population": 2570000,
-      "densite": 28.51,
+      "population": 2582811,
+      "densite": 28.65,
       "superficie": 90127,
       "superficie_pourcentage": 12.6,
-      "population_pourcentage": 6.71,
+      "population_pourcentage": 6.87,
       "subdivisions": 147,
       "provinces": 8,
-      "densite_par_province": 3.56,
-      "taille_moyenne_communes": 17483
+      "densite_par_province": 3.58,
+      "taille_moyenne_communes": 17570
     },
     "Fès-Meknès": {
-      "population": 4680000,
-      "densite": 116.78,
+      "population": 4702950,
+      "densite": 117.36,
       "superficie": 40075,
       "superficie_pourcentage": 5.64,
-      "population_pourcentage": 12.29,
+      "population_pourcentage": 12.50,
       "subdivisions": 194,
       "provinces": 9,
-      "densite_par_province": 12.98,
-      "taille_moyenne_communes": 24124
+      "densite_par_province": 13.04,
+      "taille_moyenne_communes": 24242
     },
     "Rabat-Salé-Kénitra": {
-      "population": 5080000,
-      "densite": 279.18,
+      "population": 5112247,
+      "densite": 280.95,
       "superficie": 18194,
       "superficie_pourcentage": 2.56,
-      "population_pourcentage": 13.29,
+      "population_pourcentage": 13.59,
       "subdivisions": 114,
       "provinces": 7,
-      "densite_par_province": 39.88,
-      "taille_moyenne_communes": 44561
+      "densite_par_province": 40.14,
+      "taille_moyenne_communes": 44844
     },
     "Béni Mellal-Khénifra": {
-      "population": 2790000,
-      "densite": 68.0,
+      "population": 2800582,
+      "densite": 68.24,
       "superficie": 41033,
       "superficie_pourcentage": 5.77,
-      "population_pourcentage": 7.3,
+      "population_pourcentage": 7.45,
       "subdivisions": 164,
       "provinces": 5,
-      "densite_par_province": 13.6,
-      "taille_moyenne_communes": 17012
+      "densite_par_province": 13.65,
+      "taille_moyenne_communes": 17077
     },
     "Casablanca-Settat": {
-      "population": 7570000,
-      "densite": 389.21,
+      "population": 7609467,
+      "densite": 391.18,
       "superficie": 19448,
       "superficie_pourcentage": 2.74,
-      "population_pourcentage": 19.84,
+      "population_pourcentage": 20.24,
       "subdivisions": 153,
       "provinces": 9,
-      "densite_par_province": 43.25,
-      "taille_moyenne_communes": 49477
+      "densite_par_province": 43.46,
+      "taille_moyenne_communes": 49735
     },
     "Marrakech-Safi": {
-      "population": 4980000,
-      "densite": 127.14,
+      "population": 4995029,
+      "densite": 127.52,
       "superficie": 39167,
       "superficie_pourcentage": 5.51,
-      "population_pourcentage": 13.04,
+      "population_pourcentage": 13.28,
       "subdivisions": 251,
       "provinces": 8,
-      "densite_par_province": 15.89,
-      "taille_moyenne_communes": 19841
+      "densite_par_province": 15.94,
+      "taille_moyenne_communes": 19901
     },
     "Drâa-Tafilalet": {
-      "population": 1810000,
-      "densite": 15.65,
+      "population": 1818129,
+      "densite": 15.73,
       "superficie": 115592,
       "superficie_pourcentage": 16.25,
-      "population_pourcentage": 4.74,
+      "population_pourcentage": 4.83,
       "subdivisions": 109,
       "provinces": 5,
-      "densite_par_province": 3.13,
-      "taille_moyenne_communes": 16606
+      "densite_par_province": 3.15,
+      "taille_moyenne_communes": 16680
     },
     "Souss-Massa": {
-      "population": 2940000,
-      "densite": 54.66,
+      "population": 2960593,
+      "densite": 55.04,
       "superficie": 53789,
       "superficie_pourcentage": 7.57,
-      "population_pourcentage": 7.7,
+      "population_pourcentage": 7.87,
       "subdivisions": 175,
       "provinces": 6,
-      "densite_par_province": 9.11,
-      "taille_moyenne_communes": 16800
+      "densite_par_province": 9.17,
+      "taille_moyenne_communes": 16918
     },
     "Guelmim-Oued Noun": {
-      "population": 460000,
-      "densite": 9.98,
+      "population": 481470,
+      "densite": 10.44,
       "superficie": 46108,
       "superficie_pourcentage": 6.49,
-      "population_pourcentage": 1.2,
+      "population_pourcentage": 1.28,
       "subdivisions": 53,
       "provinces": 4,
-      "densite_par_province": 2.5,
-      "taille_moyenne_communes": 8679
+      "densite_par_province": 2.61,
+      "taille_moyenne_communes": 9084
     },
     "Laâyoune-Sakia El Hamra": {
-      "population": 378000,
-      "densite": 2.7,
+      "population": 407854,
+      "densite": 2.91,
       "superficie": 140018,
       "superficie_pourcentage": 19.7,
-      "population_pourcentage": 0.99,
+      "population_pourcentage": 1.08,
       "subdivisions": 20,
       "provinces": 4,
-      "densite_par_province": 0.68,
-      "taille_moyenne_communes": 18900
+      "densite_par_province": 0.73,
+      "taille_moyenne_communes": 20393
     },
     "Dakhla-Oued Ed-Dahab": {
-      "population": 130000,
-      "densite": 0.99,
+      "population": 162969,
+      "densite": 1.25,
       "superficie": 130898,
       "superficie_pourcentage": 18.41,
-      "population_pourcentage": 0.34,
+      "population_pourcentage": 0.43,
       "subdivisions": 13,
       "provinces": 2,
-      "densite_par_province": 0.5,
-      "taille_moyenne_communes": 10000
+      "densite_par_province": 0.62,
+      "taille_moyenne_communes": 12536
     }
   }
 };
